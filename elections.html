@@ -51,19 +51,20 @@
         #features {
             top: 20;
             margin-top: 20px;
-            width: 490px;
-            height: 120px;
+            width: 420px;
+            height: 140px;
             overflow: auto;
 
         }
         #legend {
             padding-right: 10px;
-            padding-left : 10px;
+            padding-left: 10px;
+            margin-left: 10px;
             box-shadow: 0 1px 2px rgba(0,0,0,0.10);
-            height: 160px;
+            height: 120px;
             margin-bottom: 10px;
-            width: 300px;
-            top: 150px;
+            width: 400px;
+            top: 180px;
             right: 0;
             margin-right: 30px;
             border: 2px solid #020F3E ;
@@ -72,8 +73,6 @@
         }
         .legend-key {
             display:inline-block;
-            
-            
             border-radius: 20%;
             width: 10px;
             height: 30px;
@@ -99,7 +98,7 @@ img{
 <body>
 
 <div id='map'></div>
-<div class='map-overlay' id='features'><h3>PERÚ - 2018</h3><div><h2>Resultados de las elecciones regionales</h2></div><div id ='pd'></div><p><b></b></p></div>
+<div class='map-overlay' id='features'><h3>PERÚ - 2018</h3><div><h2>Resultados de las <br> elecciones regionales</h2></div><div id ='pd'></div></div>
 <div class='map-overlay' id='legend'><h3>LEYENDA</h3></div>
 
 <script>
@@ -204,7 +203,7 @@ map.on('load', function () {
              
              var popup = new mapboxgl.Popup({closeOnClick: true},{ offset: [0, -15] })
              .setLngLat(map.unproject(e.point))
-             .setHTML('<h2>'+ region[0].properties.Region +'</h2>' +                             
+             .setHTML('<p><h2>'+ region[0].properties.Region +'</h2>' +                             
                     '<img src='+region[0].properties.imagen+'>'+'<b>'+region[0].properties.Porcentaje_Votos+'%'+'</b>')
              .addTo(map);
 
