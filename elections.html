@@ -204,7 +204,7 @@ map.on('load', function () {
              
              var popup = new mapboxgl.Popup({closeOnClick: true},{ offset: [0, -15] })
              .setLngLat(map.unproject(e.point))
-             .setHTML('<h3>'+ region[0].properties.Region +'</h3>' +                             
+             .setHTML('<h2>'+ region[0].properties.Region +'</h2>' +                             
                     '<img src='+region[0].properties.imagen+'>'+'<b>'+region[0].properties.Porcentaje_Votos+'%'+'</b>')
              .addTo(map);
 
