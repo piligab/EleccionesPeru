@@ -94,7 +94,7 @@ img{
 <body>
 
 <div id='map'></div>
-<div class='map-overlay' id='features'><h2>Resultados de las elecciones regionales - Perú 2018</h2><div id ='pd'></div><p><b>!Haga click en una región para ver los resultados!</b></p></div>
+<div class='map-overlay' id='features'><h2>Resultados de las elecciones regionales - Perú 2018</h2><div id ='pd'></div><p><b></b></p></div>
 <div class='map-overlay' id='legend'><h3>Resultados por regiones </h3></div>
 
 <script>
@@ -113,6 +113,7 @@ map.on('load', function () {
     map.getCanvas().style.cursor = 'default';
     var layers = ['Ganadores en las elecciones de octubre', 'Pasan a segunda vuelta electoral'];
     var colors = ['#186ea0', '#e8de21'];
+    document.getElementById('pd').innerHTML = '<p>¡Haga click en una región, para ver los resultados!</p>'
 
     // create legend
     for (i=0; i<layers.length; i++) {
@@ -181,9 +182,10 @@ map.on('load', function () {
            var region = map.queryRenderedFeatures(e.point, {
                 layers: ['peruRegions']
           });
+
             if (region.length > 0) {
              var segunda = region[0].properties.Segunda_Vuelta;
-
+             document.getElementById('pd').innerHTML = '<p></p>'
              if(segunda == "Si") {
              var popup = new mapboxgl.Popup({closeOnClick: true},{ offset: [0, -15] })
              .setLngLat(map.unproject(e.point))
@@ -203,7 +205,7 @@ map.on('load', function () {
              }
  
             } else {
-            
+            document.getElementById('pd').innerHTML = '<p>¡Haga click en una región para ver los resultados!</p>'
             }
 
            
