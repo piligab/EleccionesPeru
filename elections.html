@@ -112,7 +112,7 @@ map.on('load', function () {
     map.fitBounds([[-82.089844,-18.416711], [-66.093750,0.7254656]]);
     map.getCanvas().style.cursor = 'default';
     var layers = ['Ganadores en las elecciones de octubre', 'Pasan a segunda vuelta electoral'];
-    var colors = ['#186ea0', '#e8de21'];
+    var colors = ['#D91023', '#F7B32B'];
     document.getElementById('pd').innerHTML = '<p>¡Haga click en una región, para ver los resultados!</p>'
 
     // create legend
@@ -141,11 +141,12 @@ map.on('load', function () {
         "source": "regions",
         "layout": {},
         "paint": {
-            "fill-color": "#0C163A",
-            "fill-opacity": ["case",
-                ["boolean", ["feature-state", "hover"], false],
-                0.4,
+            "fill-color": "#950B18",
+            
+            "fill-opacity": ["case",["boolean", ["feature-state", "hover"], false],
+                0.5,
                 0.1
+                
             ]
         }
     });
